@@ -5,10 +5,7 @@
       learning, finding, designing, developing impact
     </p>
     <p class="hero_text--intro">
-      I'm a UX Developer that is always trying to learn as much as I can, this
-      is because I believe that every random thing I learn will somehow help me
-      make an impact in this world. I'm currently based out of Toronto, where I
-      take every chance I get to explore culture and build something new.
+      Environmental neuroscientist studying the psychological impacts of urban design.
     </p>
     <ButtonList :hasButton="true" v-bind:button="button" v-bind:list="list" />
   </section>

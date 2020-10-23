@@ -2,7 +2,6 @@
   <div id="app">
     <Hero />
     <Intro />
-    <Portfolio />
     <Contact />
   </div>
 </template>
@@ -10,7 +9,6 @@
 <script>
 import Hero from "./components/layout/Hero.vue";
 import Intro from "./components/layout/Intro.vue";
-import Portfolio from "./components/layout/Portfolio.vue";
 import Contact from "./components/layout/Contact.vue";
 
 export default {

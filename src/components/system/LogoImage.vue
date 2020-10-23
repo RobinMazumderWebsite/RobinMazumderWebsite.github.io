@@ -20,7 +20,7 @@ export default  {
   props: [],
   mounted () { },
   data () { return {
-    logo_alttext: "Arjun Kalburgi's logo - it's a leaf that lays on it's side, with a sharp leaf blade and a soft stem - symbolizing that he grows sharply but remains humble."
+    logo_alttext: "Robin Mazumder's logo - it's a leaf that lays on it's side, with a sharp leaf blade and a soft stem - symbolizing that he grows sharply but remains humble."
   } },
   methods: { },
   computed: { }
