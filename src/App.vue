@@ -16,7 +16,6 @@ export default {
   components: {
     Hero,
     Intro,
-    Portfolio,
     Contact,
   },
 };
