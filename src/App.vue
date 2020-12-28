@@ -22,20 +22,12 @@ export default {
 </script>
 
 <style lang="scss">
-@font-face {
-  font-family: "Lato";
-  src: url("./assets/fonts/Lato-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Raleway";
-  src: url("./assets/fonts/Raleway-Bold.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&family=Archivo:wght@600&display=swap');
 
 :root {
-  --brand-colour: #12a962;
-  --brand-colourlight: #12a962;
-  --brand-colourdark: #005d31;
+  --brand-colour: #384722;
+  --brand-colourlight: #BD8732;
+  --brand-colourdark: #BD8732;
 
   --brand-contrastlight: #efefef;
   --brand-contrastdark: #202020;
@@ -44,9 +36,9 @@ export default {
   --brand-backgroundcolour: #F3ECE0;
 
   --brand-text: normal 18px/1.3 "Roboto";
-  --bold-text: normal 700 30px/1.3 "Helvetica Neue";
+  --bold-text: normal 700 30px/1.3 "Archivo";
   --heading-text: normal 700 45px/1.3 "Roboto Mono";
-  --button-text: normal 15px "Helvetica Neue";
+  --button-text: normal 15px "Archivo";
   --icon-text: normal 20px/1.3 "Roboto";
 }
 
