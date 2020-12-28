@@ -38,14 +38,20 @@ export default {
   --brand-colourdark: #005d31;
 
   --brand-contrastlight: #efefef;
-  --brand-contrastdark: #081a11;
+  --brand-contrastdark: #202020;
 
   --brand-textcolour: --brand-contrastdark;
+  --brand-backgroundcolour: #F3ECE0;
 
-  --brand-text: normal 18px/1.3 "Lato";
-  --bold-text: normal 700 30px/1.3 "Raleway";
-  --button-text: normal 15px "Raleway";
-  --icon-text: normal 20px/1.3 "Lato";
+  --brand-text: normal 18px/1.3 "Roboto";
+  --bold-text: normal 700 30px/1.3 "Helvetica Neue";
+  --heading-text: normal 700 45px/1.3 "Roboto Mono";
+  --button-text: normal 15px "Helvetica Neue";
+  --icon-text: normal 20px/1.3 "Roboto";
+}
+
+body {
+  background-color: var(--brand-backgroundcolour);
 }
 
 // FONTS
@@ -58,6 +64,7 @@ export default {
 
 *[class$="title"] {
   font: var(--bold-text);
+  text-transform: uppercase;
 }
 
 // SPACING
