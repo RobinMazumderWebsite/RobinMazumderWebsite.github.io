@@ -1,26 +1,20 @@
 <template lang="html">
   <section class="hero section">
-    <LogoImage class="hero_nameImg" />
-    <p class="hero_text--tag">
-      learning, finding, designing, developing impact
-    </p>
+    <h1 class="hero_text--header">
+      Robin Mazumder
+    </h1>
     <p class="hero_text--intro">
-      Environmental neuroscientist studying the psychological impacts of urban design.
+      I’ve always been interested in how urban design impacts our psychology, now I’m an environmental neuroscientist.
     </p>
-    <ButtonList :hasButton="true" v-bind:button="button" v-bind:list="list" />
   </section>
 </template>
 
 <script lang="js">
 
-  import LogoImage from './../system/LogoImage.vue'
-  import ButtonList from './../system/ButtonList.vue'
 
   export default  {
     name: 'hero',
     components: {
-      LogoImage,
-      ButtonList
     },
     props: [],
     mounted () {
@@ -60,9 +54,15 @@
     width: 200px;
   }
 
-  &_text--tag {
-    margin-top: 7px;
-    margin-bottom: 30px;
+  &_text {
+    &--header {
+      font: var(--heading-text);
+      text-transform: uppercase;
+    }
+    &--tag {
+      margin-top: 7px;
+      margin-bottom: 30px;
+    }
   }
 }
 </style>
