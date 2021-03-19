@@ -1,89 +1,43 @@
 <template lang="html">
   <section class="intro section" id="intro">
-    <BackgroundAnimation class="intro_bgani" :total="number_of_leaves" />
+    <FloatingImage />
 
-    <theImage
-      class="intro_image intro_image--innovation mobile"
-      :path="innovationimage.path"
-      :alttext="innovationimage.alttext"
-    />
-    <h2 class="intro_text intro_text--title">
-      The Goal: Products that work like magic.
-    </h2>
-    <p class="intro_text intro_text--firstpara">
-      I love developing websites and apps
-      <br />that deliver magical experiences <br />by providing real value.
-    </p>
-    <p class="intro_text intro_text--secondpara">
-      In the last 5 years I’ve learned loads of
-      <br />small details, trying to create magic.
-    </p>
-    <FloatingImage
-      class="intro_image intro_image--abid"
-      :image="abidimage.path"
-      :alttext="abidimage.alttext"
-    />
-    <theImage
-      class="intro_image mobile mobile-only"
-      :path="abidimage.path"
-      :alttext="abidimage.alttext"
-    />
-    <FloatingImage
-      class="intro_image intro_image--red"
-      :image="redimage.path"
-      :alttext="redimage.alttext"
-    />
-    <p class="intro_text intro_text--thirdpara">
-      I’ve been a developer, a designer,
-      <br />organized project specs, business <br />models and talked to experts
-      in all <br />kinds of different fields.
-    </p>
-    <FloatingImage
-      class="intro_image intro_image--sra"
-      :image="sraimage.path"
-      :alttext="sraimage.alttext"
-    />
-    <p class="intro_text intro_text--fourthpara">
-      Through all that I learned that humans
-      <br />come first, there’s nothing better than <br />putting a smile on
-      someone’s face.
-    </p>
+    <div>
+      <h2 class="intro_text intro_text--title">
+        Robin Mazumder
+      </h2>
+      <p class="intro_text intro_text--para">
+        Life is about relationships. Relationships with ourselves, others and our world. When I realized how much impact the places we live have on our ability to build and keep these relationships, a light went on in my head. If we can build better environments for our cities and our people, we can dramatically improve our mental and physical health, our friendships and families, our communities, and of course, our relationships. 
+      </p>
+
+      <p class="intro_text intro_text--para">
+        I believe humans are inherently good, but our environments are built in a way that makes us bad. When our environments don't prioritize our wellbeing it creates a disharmoney within ourselves which then goes on to become a negative pattern, we've all experienced road rage and to feel it build. This is proof that all our relationships are connected and we rely on each of them. 
+      </p>
+
+      <p class="intro_text intro_text--para">
+        My Thakurma (Bengali for Father's Mother) came to stay with us from Bangladesh when I was young, she helped me connect with my culture, establishing a sense of wonder and curiosity. When I worked in community mental health as an occupational therapist I began connecting the dots between our wellbeing and urban design. I became so curious that I completed my PhD in cognitive neuroscience to study the psychological impacts of urban design. I learned that urban design is not one size fits all. I learned Kimberle Crenshaw's theory of Intersectionality, that aspects of identity, including race, gender, and sexual orientation, can cause people, and systems to treat people inequitably. 
+      </p>
+
+      <p class="intro_text intro_text--para">
+        Today I propose a conceptual framework called Experiential Equity, which uses neuroscience to measure the disparities in experiences, through looking at physiological indicators like stress and brain activity. It's my mission to heal these disparities, reversing the theory of Intersectionality to create spaces that treat people equitably and thus allow us to bring healthy patterns back into our relationships. 
+      </p>
+    </div>
   </section>
 </template>
 
 <script lang="js">
 
-import theImage from './../system/Image.vue'
 import FloatingImage from './../system/FloatingImage.vue'
-import BackgroundAnimation from './../system/BackgroundAnimation.vue'
 
 export default  {
   name: 'intro',
   components: {
-    theImage,
     FloatingImage,
-    BackgroundAnimation
   },
   props: [],
   mounted () { },
   data () { return {
     number_of_leaves: 40,
-    innovationimage: {
-      path: "innovation.jpg",
-      alttext: "When you combine Domain Knowledge, Tech and Design, you get to the Users. That's the receipe for Innovation."
-    },
-    abidimage: {
-      path: "abid.jpg",
-      alttext: "Interviews and in-person 1 on 1s gather unique and invaluable insights, these softskills help start great products."
-    },
-    sraimage: {
-      path: "sra.jpg",
-      alttext: "Remaining happy and optimistic helps battle stress of deadlines, these softskills help glue together great teams."
-    },
-    redimage: {
-      path: "red.jpg",
-      alttext: "Discussion, presentation and collaboration are grease for the engine, these softskills unlock great work."
-    },
   } },
   methods: { },
   computed: { }
@@ -94,23 +48,12 @@ export default  {
 .intro {
   position: relative;
   padding: 100px 0 0;
-  display: grid;
-  grid-template-columns: 50% 50px auto;
-  grid-template-rows: 230px 200px 7.5rem 7.5rem 8rem 12.5rem 15rem;
+  display: grid; 
+  grid-template-columns: 30% auto;
+  gap: 5%;
+
   @media screen and (max-width: 40em) {
     padding: 100px 0 0;
-    display: block;
-  }
-
-  &_bgani {
-    left: calc((0.3 * 100vw) / -2);
-    bottom: -10vw;
-    right: calc((0.3 * 100vw) / -2);
-
-    @media screen and (max-width: 80em) {
-      left: calc((0.15 * 100vw) / -2);
-      right: calc((0.15 * 100vw) / -2);
-    }
   }
 
   &_text {
@@ -126,97 +69,9 @@ export default  {
       }
     }
 
-    &:not(.intro_text--title) {
+    &--para {
       @media screen and (min-width: 40em) {
-        padding: 10%;
-      }
-    }
-
-    &--firstpara {
-      grid-column-start: 3;
-      grid-column-end: 4;
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-
-    &--secondpara {
-      grid-column-start: 2;
-      grid-column-end: 4;
-      grid-row-start: 3;
-      grid-row-end: 5;
-    }
-
-    &--thirdpara {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 6;
-
-      @media screen and (min-width: 40em) {
-        padding: 0 10%;
-      }
-    }
-
-    &--fourthpara {
-      grid-column-start: 3;
-      grid-column-end: 4;
-      grid-row-start: 7;
-      grid-row-end: 8;
-    }
-  }
-
-  &_image {
-    &--innovation {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      width: 100%;
-      height: 100%;
-    }
-
-    &--abid {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 4;
-      grid-row-end: 6;
-      margin-left: 5%;
-    }
-
-    &--red {
-      grid-column-start: 3;
-      grid-column-end: 4;
-      grid-row-start: 5;
-      grid-row-end: 6;
-      margin-left: 10%;
-    }
-
-    &--sra {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 7;
-      grid-row-end: 8;
-      justify-self: center;
-      margin-top: 10vh;
-      margin-left: 20%;
-    }
-
-    &:not(.mobile) {
-      @media screen and (max-width: 40em) {
-        display: none;
-      }
-    }
-
-    &.mobile {
-      &-only {
-        display: none;
-      }
-
-      @media screen and (max-width: 40em) {
-        display: block !important;
-        width: 90%;
-        max-height: 200px;
-        height: 200px;
-        object-position: top;
+        padding: 2% 10%;
       }
     }
   }

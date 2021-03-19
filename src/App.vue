@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <Hero />
     <Intro />
+    <Animation />
     <Contact />
   </div>
 </template>
 
 <script>
-import Hero from "./components/layout/Hero.vue";
 import Intro from "./components/layout/Intro.vue";
+import Animation from "./components/layout/Animation.vue";
 import Contact from "./components/layout/Contact.vue";
 
 export default {
   name: "App",
   components: {
-    Hero,
     Intro,
+    Animation,
     Contact,
   },
 };
