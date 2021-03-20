@@ -11,15 +11,15 @@
       </p>
 
       <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        I believe humans are inherently good, but our environments are built in a way that makes us bad. When our environments don't prioritize our wellbeing it creates a disharmoney within ourselves which then goes on to become a negative pattern, we've all experienced road rage and to feel it build. This is proof that all our relationships are connected and we rely on each of them. 
+        I believe humans are inherently good, but our environments are built in a way that makes us bad. My Thakurma (Bengali for Father's Mother) came to stay with us from Bangladesh when I was young, connecting me with my culture and building positive patterns for my life. When our relationships don't prioritize our wellbeing it creates disharmony and negative patterns. Too many of us live with the anxiety that our disharmony causes.
       </p>
 
       <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        My Thakurma (Bengali for Father's Mother) came to stay with us from Bangladesh when I was young, she helped me connect with my culture, establishing a sense of wonder and curiosity. When I worked in community mental health as an occupational therapist I began connecting the dots between our wellbeing and urban design. I became so curious that I completed my PhD in cognitive neuroscience to study the psychological impacts of urban design. I learned that urban design is not one size fits all. I learned Kimberle Crenshaw's theory of Intersectionality, that aspects of identity, including race, gender, and sexual orientation, can cause people, and systems to treat people inequitably. 
+        When I worked in community mental health as an occupational therapist I began connecting the dots between our wellbeing and our cities. I completed my PhD in cognitive neuroscience to study the psychological impacts of urban design; and learned that our urban design is not one size fits all, it’s not built for everyone. I learned Kimberle Crenshaw's theory of Intersectionality, that aspects of identity, including race, gender, and sexual orientation, can cause people, and systems to treat people inequitably.
       </p>
 
       <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        Today I propose a conceptual framework called Experiential Equity, which uses neuroscience to measure the disparities in experiences, through looking at physiological indicators like stress and brain activity. It's my mission to heal these disparities, reversing the theory of Intersectionality to create spaces that treat people equitably and thus allow us to bring healthy patterns back into our relationships. 
+        Today I propose a conceptual framework called Experiential Equity, which uses neuroscience to measure the disparities in experiences, through looking at physiological indicators like stress and brain activity. It's my mission to heal these disparities, reversing the theory of Intersectionality to create spaces that treat people equitably and allow us to bring healthy patterns back into our relationships.
       </p>
     </div>
   </section>
