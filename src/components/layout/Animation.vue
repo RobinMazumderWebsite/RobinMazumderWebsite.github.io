@@ -28,8 +28,6 @@ export default  {
 .section {
   width: 100vw;
   max-width: none;
-  @media screen and (max-width: 80em) {
-    margin: 0;
-  }
+  margin: 0;
 }
 </style>

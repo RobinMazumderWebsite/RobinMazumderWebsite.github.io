@@ -7,19 +7,19 @@
         Robin Mazumder
       </h2>
       <p class="intro_text intro_text--para">
-        Life is about relationships. Relationships with ourselves, others and our world. When I realized how much impact the places we live have on our ability to build and keep these relationships, a light went on in my head. If we can build better environments for our cities and our people, we can dramatically improve our mental and physical health, our friendships and families, our communities, and of course, our relationships. <span v-if="!showText"><button class="intro_button" v-on:click="showText = !showText">read on</button></span>
+        Life is about relationships. Relationships with ourselves, others and our world. I'm interested in how impactful the places we live are on our lives. If we can build better cities for our people, we can dramatically improve our mental and physical health, our friendships and families, our communities, and of course, our relationships. <span v-if="!showText"><button class="intro_button" v-on:click="showText = !showText">read on</button></span>
       </p>
 
       <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        I believe humans are inherently good, but our environments are built in a way that makes us bad. My Thakurma (Bengali for Father's Mother) came to stay with us from Bangladesh when I was young, connecting me with my culture and building positive patterns for my life. When our relationships don't prioritize our wellbeing it creates disharmony and negative patterns. Too many of us live with the anxiety that our disharmony causes.
+        I believe humans are inherently good, but our environments are built in a way that makes us bad. My Thakurma (Bengali for Father's Mother) came to stay with us from Bangladesh when I was young, connecting me with my culture and instilling my values. When our relationships don't prioritize our wellbeing it creates disharmony and negative patterns. Too many of us live with the anxiety that our disharmony causes.
       </p>
 
       <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        When I worked in community mental health as an occupational therapist I began connecting the dots between our wellbeing and our cities. I completed my PhD in cognitive neuroscience to study the psychological impacts of urban design; and learned that our urban design is not one size fits all, it’s not built for everyone. I learned Kimberle Crenshaw's theory of Intersectionality, that aspects of identity, including race, gender, and sexual orientation, can cause people, and systems to treat people inequitably.
+        When I worked as an occupational therapist I began connecting the dots between our wellbeing and our cities. I completed my PhD in cognitive neuroscience to study the psychological impacts of urban design; and learned that our cities are not built for everyone. In fact, from Kimberle Crenshaw's theory of Intersectionality, it's our own aspects of identity that can cause us to treat people inequitably.
       </p>
 
       <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        Today I propose a conceptual framework called Experiential Equity, which uses neuroscience to measure the disparities in experiences, through looking at physiological indicators like stress and brain activity. It's my mission to heal these disparities, reversing the theory of Intersectionality to create spaces that treat people equitably and allow us to bring healthy patterns back into our relationships.
+        But I propose the framework of Experiential Equity, which uses neuroscience to measure the disparities in experiences. It's my mission to heal the disparities, reversing the theory of Intersectionality, designing cities that treat people equitably and make all our relationships healthy once more.
       </p>
     </div>
   </section>
@@ -52,7 +52,7 @@ export default  {
   grid-template-columns: 30% auto;
   gap: 5%;
 
-  @media screen and (max-width: 80em) {
+  @media screen and (max-width: 600px) {
     display: block;
     padding: 0;
   }
@@ -72,7 +72,7 @@ export default  {
       font: var(--bold-text);
       text-transform: uppercase;
       z-index: 0;
-      @media screen and (max-width: 80em) {
+      @media screen and (max-width: 600px) {
         font-size: 20px;
       }
     }
