@@ -1,23 +1,19 @@
 <template lang="html">
-  <footer class="contact contact-style b-loaded" id="contact">
+  <section class="section contact contact-style b-loaded" id="contact">
     <div class="contact_contents">
-      <h2 class="contact_contents--title">More</h2>
-      <ButtonList
-        class="contact_contents--links"
-        :hasButton="false"
-        v-bind:list="list"
-      />
+      <h4 class="contact_contents--title">lets work together</h4>
+      <p>
+        email me at <a class="contact_contents--links" href="mailto:robin@robinmazumder.com">robin at robinmazumder dot com</a>.
+      </p>
     </div>
-  </footer>
+  </section>
 </template>
 
 <script lang="js">
-  import ButtonList from './../system/ButtonList.vue'
 
   export default  {
     name: 'contact',
     components: {
-      ButtonList,
     },
     props: [],
     mounted () {
@@ -48,37 +44,18 @@
 <style scoped lang="scss">
 .contact {
   z-index: 1;
-  text-align: center;
-  width: 100%;
   position: relative;
-  bottom: 0;
-  background-size: cover;
-  margin: 0;
-  min-height: 300px;
 
   &_contents {
     padding: 10vh 0;
     width: 100%;
     margin: auto;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    grid-row-gap: 2.5vh;
 
     &--title {
-      color: #ffffff;
-      margin: 0;
-      grid-column-start: 1;
-      grid-column-end: 1;
-      grid-row-start: 1;
-      grid-row-end: 2;
+      font-weight: bold;
     }
 
     &--links {
-      grid-column-start: 1;
-      grid-column-end: 1;
-      grid-row-start: 2;
-      grid-row-end: 3;
       position: relative;
       margin: auto;
     }

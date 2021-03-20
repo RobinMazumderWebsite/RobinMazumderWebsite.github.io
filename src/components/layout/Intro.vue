@@ -58,10 +58,8 @@ export default  {
 
   &_text {
     &--title {
-      grid-column-start: 2;
-      grid-column-end: 4;
-      grid-row-start: 1;
-      grid-row-end: 2;
+      font: var(--bold-text);
+      text-transform: uppercase;
       width: 80%;
       z-index: 0;
       @media screen and (max-width: 40em) {

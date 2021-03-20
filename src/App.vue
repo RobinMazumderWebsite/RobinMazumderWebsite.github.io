@@ -47,16 +47,11 @@ body {
 }
 
 // FONTS
-#app {
+#app, a {
   font: var(--brand-text);
   color: var(--brand-textcolour);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-*[class$="title"] {
-  font: var(--bold-text);
-  text-transform: uppercase;
 }
 
 // SPACING
@@ -74,8 +69,7 @@ body {
     --brand-colour: var(--brand-colourdark);
     --brand-textcolour: var(--brand-contrastlight);
   }
-  body,
-  .contact {
+  body {
     background: var(--brand-contrastdark) !important;
   }
 }
