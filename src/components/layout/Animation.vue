@@ -17,7 +17,7 @@ export default  {
   props: [],
   mounted () { },
   data () { return {
-    number_of_leaves: 40,
+    number_of_leaves: 3,
   } },
   methods: { },
   computed: { }

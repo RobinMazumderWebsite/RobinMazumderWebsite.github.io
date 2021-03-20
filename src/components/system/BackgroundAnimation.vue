@@ -1,12 +1,23 @@
 <template lang="html">
   <div ref="bgani" class="BackgroundAnimation">
-    <div
-      v-for="index in total"
-      :key="index"
-      ref="BackgroundAnimation_icon"
-      class="BackgroundAnimation_icon"
-      :class="'BackgroundAnimation_icon--' + (index % 8)"
-    ></div>
+    <img
+      key="1"
+      ref="BackgroundAnimation_icon1"
+      class="BackgroundAnimation_icon BackgroundAnimation_icon--1"
+      src="../../assets/elements/Rectangle01.svg"
+    />
+    <img
+      key="2"
+      ref="BackgroundAnimation_icon2"
+      class="BackgroundAnimation_icon BackgroundAnimation_icon--2"
+      src="../../assets/elements/Rectangle02.svg"
+    />
+    <img
+      key="3"
+      ref="BackgroundAnimation_icon3"
+      class="BackgroundAnimation_icon BackgroundAnimation_icon--3"
+      src="../../assets/elements/Rectangle03.svg"
+    />
   </div>
 </template>
 
@@ -18,8 +29,10 @@
     name: 'BackgroundAnimation',
     props: ["total"],
     mounted () {
-      const container = this.$refs.bgani, w = container.clientWidth, h = container.clientHeight;
-      const icons = this.$refs.BackgroundAnimation_icon;
+      const icons = [
+        this.$refs.BackgroundAnimation_icon1, 
+        this.$refs.BackgroundAnimation_icon2, 
+        this.$refs.BackgroundAnimation_icon3];
 
       for (var i = 0; i < this.total; i++) {
           var icon = icons[i];
@@ -38,8 +51,6 @@
       iconRotate (icon, tween_max) {
         // make icon rotate
         tween_max.to(icon, this.R(2, 5), {
-            rotationX: 180 * this.S(),
-            rotationY: 180 * this.S(),
             repeat: 1,
             yoyo: true,
             ease: "easeInOut",
@@ -49,9 +60,8 @@
       iconSway (icon, tween_max) {
         // make icon sway
         tween_max.to(icon, this.R(2, 8), {
-            x: '+=' + this.R(-100, 100),
-            y: '+=' + this.R(-100, 100),
-            rotationZ: this.R(0, 180),
+            x: '+=' + this.R(-80, 80),
+            y: '+=' + this.R(-80, 80),
             repeat: 0,
             yoyo: false,
             ease: "easeInOut",
@@ -80,36 +90,11 @@
     position: absolute;
     pointer-events: none;
     z-index: -1;
-    width: 35px;
-    height: 35px;
+    // width: 35px;
+    // height: 35px;
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.5;
-
-    &--1 {
-      background-image: url("../../assets/elements/element01.svg");
-    }
-    &--2 {
-      background-image: url("../../assets/elements/element02.svg");
-    }
-    &--3 {
-      background-image: url("../../assets/elements/element03.svg");
-    }
-    &--4 {
-      background-image: url("../../assets/elements/element04.svg");
-    }
-    &--5 {
-      background-image: url("../../assets/elements/element05.svg");
-    }
-    &--6 {
-      background-image: url("../../assets/elements/element06.svg");
-    }
-    &--7 {
-      background-image: url("../../assets/elements/element07.svg");
-    }
-    &--0 {
-      background-image: url("../../assets/elements/element08.svg");
-    }
   }
 }
 </style>

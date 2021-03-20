@@ -1,6 +1,5 @@
 <template lang="html">
   <footer class="contact contact-style b-loaded" id="contact">
-    <BackgroundAnimation :total="number_of_leaves" />
     <div class="contact_contents">
       <h2 class="contact_contents--title">More</h2>
       <ButtonList
@@ -14,13 +13,11 @@
 
 <script lang="js">
   import ButtonList from './../system/ButtonList.vue'
-  import BackgroundAnimation from './../system/BackgroundAnimation.vue'
 
   export default  {
     name: 'contact',
     components: {
       ButtonList,
-      BackgroundAnimation
     },
     props: [],
     mounted () {
@@ -55,7 +52,6 @@
   width: 100%;
   position: relative;
   bottom: 0;
-  background: var(--brand-colour);
   background-size: cover;
   margin: 0;
   min-height: 300px;
