@@ -25,9 +25,11 @@ export default  {
 </script>
 
 <style scoped lang="scss">
-.intro {
-
-  &_bgani {
+.section {
+  width: 100vw;
+  max-width: none;
+  @media screen and (max-width: 80em) {
+    margin: 0;
   }
 }
 </style>

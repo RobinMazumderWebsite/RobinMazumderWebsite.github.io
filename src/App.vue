@@ -57,10 +57,8 @@ body {
 // SPACING
 .section {
   width: 70%;
+  max-width: 800px;
   margin: 25vh auto 15vh;
-  @media screen and (max-width: 80em) {
-    width: 85%;
-  }
 }
 
 // DARK MODE

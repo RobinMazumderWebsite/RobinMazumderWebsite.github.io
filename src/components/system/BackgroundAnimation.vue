@@ -81,7 +81,13 @@
   position: relative;
   z-index: -1;
   pointer-events: none;
-  min-height: 500px;
+  padding-top: 500px;
+  width: 100%;
+  overflow-x: hidden;
+  @media screen and (max-width: 80em) {
+    padding: 0 0 200px 0;
+    overflow-x: -moz-hidden-unscrollable;
+  }
 
   &_icon {
     position: absolute;
@@ -92,6 +98,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     opacity: 0.5;
+    @media screen and (max-width: 80em) {
+      width: 70%
+    }
   }
 }
 </style>

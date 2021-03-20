@@ -45,6 +45,7 @@
 .contact {
   z-index: 1;
   position: relative;
+  margin-top: 0;
 
   &_contents {
     padding: 10vh 0;

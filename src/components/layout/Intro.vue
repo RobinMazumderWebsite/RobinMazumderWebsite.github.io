@@ -52,24 +52,25 @@ export default  {
   grid-template-columns: 30% auto;
   gap: 5%;
 
-  @media screen and (max-width: 40em) {
-    padding: 100px 0 0;
+  @media screen and (max-width: 80em) {
+    display: block;
+    padding: 0;
   }
 
   &_text {
     &--title {
       font: var(--bold-text);
       text-transform: uppercase;
-      width: 80%;
       z-index: 0;
-      @media screen and (max-width: 40em) {
-        width: 100%;
+      @media screen and (max-width: 80em) {
+        font-size: 20px;
       }
     }
 
     &--para {
+      line-height: 150%;
       @media screen and (min-width: 40em) {
-        padding: 2% 10%;
+        padding: 2% 0;
       }
     }
   }

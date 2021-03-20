@@ -11,7 +11,14 @@ export default  {
 
 <style lang="scss">
 .Image {
-  width: 100%;
+  width: calc(100% - 15px*2);
   border: 15px solid var(--brand-colour);
+
+  @media screen and (max-width: 80em) {
+    width: 35%;
+    border-width: 9px;
+    float: left;
+    margin-right: 20px;
+  }
 }
 </style>
