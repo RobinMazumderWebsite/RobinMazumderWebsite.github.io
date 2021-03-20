@@ -29,6 +29,7 @@
     name: 'BackgroundAnimation',
     props: ["total"],
     mounted () {
+      const container = this.$refs.bgani, w = container.clientWidth - 100, h = container.clientHeight;
       const icons = [
         this.$refs.BackgroundAnimation_icon1, 
         this.$refs.BackgroundAnimation_icon2, 
@@ -36,7 +37,7 @@
 
       for (var i = 0; i < this.total; i++) {
           var icon = icons[i];
-          TweenLite.set(icon, { x: this.R(0, w), y: this.R(0, h), z: this.R(-200, 200) }); // place icon
+          TweenLite.set(icon, { x: this.R(0, w/2), y: this.R(-h/2, h/2) }); // place icon
           this.iconRotate(icon, TweenMax);
           this.iconSway(icon, TweenMax);
       }
@@ -77,14 +78,10 @@
 
 <style scoped lang="scss">
 .BackgroundAnimation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  position: relative;
   z-index: -1;
-  overflow: hidden;
   pointer-events: none;
+  min-height: 500px;
 
   &_icon {
     position: absolute;
