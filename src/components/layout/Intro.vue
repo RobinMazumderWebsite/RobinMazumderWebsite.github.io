@@ -1,28 +1,100 @@
 <template lang="html">
-  <section class="intro section" id="intro">
+  <main class="intro section" id="intro">
     <FloatingImage />
 
     <div>
-      <h2 class="intro_text intro_text--title">
+      <h1 class="intro_text intro_text--title">
         Robin Mazumder
-      </h2>
-      <p class="intro_text intro_text--para">
-        Life is about relationships. Relationships with ourselves, others and our world. I'm interested in how impactful the places we live are on our lives. If we can build better cities for our people, we can dramatically improve our mental and physical health, our friendships and families, our communities, and of course, our relationships. <span v-if="!showText"><button class="intro_button" v-on:click="showText = !showText">read on</button></span>
+      </h1>
+      <p class="intro_text intro_text--para intro_text--desc">
+        Neuroscientist interested in helping design cities that support
+        well-being, equity, and our planet.
       </p>
 
-      <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        I believe humans are inherently good, but our environments are built in a way that makes us bad. My Thakurma (Bengali for Father's Mother) came to stay with us from Bangladesh when I was young, connecting me with my culture and instilling my values. When our relationships don't prioritize our wellbeing it creates disharmony and negative patterns. Too many of us live with the anxiety that our disharmony causes.
-      </p>
+      <span v-if="!showText">
+        <button class="intro_button" v-on:click="showText = !showText">
+          read more
+        </button>
+      </span>
 
-      <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        When I worked as an occupational therapist I began connecting the dots between our wellbeing and our cities. I completed my PhD in cognitive neuroscience to study the psychological impacts of urban design; and learned that our cities are not built for everyone. In fact, from Kimberle Crenshaw's theory of Intersectionality, it's our own aspects of identity that can cause us to treat people inequitably.
-      </p>
+      <section
+        class="hidden-start"
+        :aria-hidden="!showText"
+        :class="showText ? 'show' : 'hide'"
+        aria-live="polite"
+      >
+        <h2 class="intro_text intro_text--subtitle">
+          My mindset
+        </h2>
+        <p class="intro_text intro_text--para">
+          Life is about relationships. Relationships with ourselves, others and
+          our world. I'm interested in how impactful the places we live are on
+          our lives. If we can build better cities for our people, we can
+          dramatically improve our mental and physical health, our friendships
+          and families, our communities, and of course, our relationships.
+        </p>
+      </section>
 
-      <p class="intro_text intro_text--para hidden-start" :class="showText ? 'show' : 'hide'">
-        But I propose the framework of Experiential Equity, which uses neuroscience to measure the disparities in experiences. It's my mission to heal the disparities, reversing the theory of Intersectionality, designing cities that treat people equitably and make all our relationships healthy once more.
-      </p>
+      <section
+        class="hidden-start"
+        :aria-hidden="!showText"
+        :class="showText ? 'show' : 'hide'"
+        aria-live="polite"
+      >
+        <h2 class="intro_text intro_text--subtitle">
+          My belief
+        </h2>
+        <p class="intro_text intro_text--para">
+          I believe humans are inherently good, but our environments are built
+          in a way that makes us bad. My Thakurma (Bengali for Father's Mother)
+          came to stay with us from Bangladesh when I was young, connecting me
+          with my culture and instilling my values. When our relationships don't
+          prioritize our wellbeing it creates disharmony and negative patterns.
+          Too many of us live with the anxiety that our disharmony causes.
+        </p>
+      </section>
+
+      <section
+        class="hidden-start"
+        :aria-hidden="!showText"
+        :class="showText ? 'show' : 'hide'"
+        aria-live="polite"
+      >
+        <h2 class="intro_text intro_text--subtitle">
+          My background
+        </h2>
+        <p class="intro_text intro_text--para">
+          When I worked as an occupational therapist I began connecting the dots
+          between our wellbeing and our cities. I completed my PhD in cognitive
+          neuroscience to study the psychological impacts of urban design; and
+          learned that our cities are not built for everyone. In fact, from
+          Kimberle Crenshaw's theory of Intersectionality, it's our own aspects
+          of identity that can cause us to treat people inequitably.
+        </p>
+      </section>
+
+      <section
+        class="hidden-start"
+        :aria-hidden="!showText"
+        :class="showText ? 'show' : 'hide'"
+        aria-live="polite"
+      >
+        <h2 class="intro_text intro_text--subtitle">
+          My mission
+        </h2>
+        <p class="intro_text intro_text--para">
+          But I propose the framework of
+          <a
+            href="https://citymonitor.ai/community/equity/public-spaces-are-essential-but-not-yet-equal"
+            >Experiential Equity</a
+          >, which uses neuroscience to measure the disparities in experiences.
+          It's my mission to heal the disparities, reversing the theory of
+          Intersectionality, designing cities that treat people equitably and
+          make all our relationships healthy once more.
+        </p>
+      </section>
     </div>
-  </section>
+  </main>
 </template>
 
 <script lang="js">
@@ -48,7 +120,7 @@ export default  {
 .intro {
   position: relative;
   padding: 100px 0 0;
-  display: grid; 
+  display: grid;
   grid-template-columns: 30% auto;
   gap: 5%;
 
@@ -72,39 +144,51 @@ export default  {
       font: var(--bold-text);
       text-transform: uppercase;
       z-index: 0;
+      margin-bottom: 0.5rem;
       @media screen and (max-width: 600px) {
         font-size: 20px;
       }
     }
 
+    &--subtitle {
+      font-size: 18px;
+      text-transform: uppercase;
+      z-index: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    &--desc {
+      margin-bottom: 1.5rem;
+    }
+
     &--para {
       line-height: 150%;
-
-      &.hidden-start {
-        transition: all 2s ease-out;
-        &:nth-of-type(2) {
-          transition-delay: .3s;
-        }
-        &:nth-of-type(3) {
-          transition-delay: .6s;
-        }
-        &:nth-of-type(4) {
-          transition-delay: .9s;
-        }
-        opacity: 0;
-        max-height: 0px;
-        &.show {
-          opacity: 1;
-          max-height: 1000px;
-        }
-      }
+      margin-top: 0.5rem;
     }
   }
 }
 
-.show {
-  max-height: 100000px;
-}
-.hide {
+.hidden-start {
+  transition: opacity 2s ease-out, max-height 2s ease-out;
+  &:nth-of-type(2) {
+    transition-delay: 0.3s;
+  }
+  &:nth-of-type(3) {
+    transition-delay: 0.6s;
+  }
+  &:nth-of-type(4) {
+    transition-delay: 0.9s;
+  }
+  &:nth-of-type(5) {
+    transition-delay: 1.2s;
+  }
+  opacity: 0;
+  max-height: 0px;
+  overflow: hidden;
+  &.show {
+    opacity: 1;
+    max-height: 1000px;
+    display: block;
+  }
 }
 </style>
