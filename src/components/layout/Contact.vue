@@ -24,13 +24,10 @@
         Thanks
       </p>
 
-      <form class="gform pure-form pure-form-stacked" @submit="checkForm">
-        <!-- 
-        novalidate="true"
-        method="POST"
-        action="https://script.google.com/macros/s/AKfycbwf9vHrFYI6KMJYyhOukPqpd1x1TUhTt41uwqtfmkxUwKmKypGNHmW8cKCdWM9KjAHL/exec"
-        @submit="onSubmit"
-        > -->
+      <form
+        class="gform pure-form pure-form-stacked"
+        @submit.prevent="checkForm"
+      >
         <div class="form-elements" v-if="show">
           <fieldset class="pure-group">
             <label for="name">aName: </label>
@@ -64,7 +61,12 @@
               text field; must be empty to submit the form! Otherwise, we assume
               the user is a spam bot.
             </label>
-            <input id="honeypot" type="text" name="honeypot" />
+            <input
+              id="honeypot"
+              type="text"
+              name="honeypot"
+              v-bind="this.honeypot"
+            />
           </fieldset>
 
           <button
@@ -84,41 +86,87 @@ export default  {
   name: 'contact',
   methods: {
     checkForm: function (e) {
-      console.log('hi', e);
       this.show = false;
 
-      e.preventDefault();
-      // var form = e.target;
+      var form = e.target;
+      var formData = this.getFormData(form);
+      if (formData.honeypot) return;
 
-      if (this.honeypot != '') return;
+      fetch("https://script.google.com/macros/s/AKfycbwf9vHrFYI6KMJYyhOukPqpd1x1TUhTt41uwqtfmkxUwKmKypGNHmW8cKCdWM9KjAHL/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: JSON.stringify(formData.data)
+      }).then(() => {
+        console.log("done");
+      })
 
-      var data = JSON.stringify({
-        name: 'arjun',
-        message: 'hey',
-        email: 'askalburgi@gmail.com',
+      // var xhr = new XMLHttpRequest();
+      // xhr.open('POST', "https://script.google.com/macros/s/AKfycbwf9vHrFYI6KMJYyhOukPqpd1x1TUhTt41uwqtfmkxUwKmKypGNHmW8cKCdWM9KjAHL/exec");
+      // // xhr.withCredentials = true;
+      // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      // xhr.onreadystatechange = function() {
+      //   if (xhr.readyState === 4 && xhr.status === 200) {
+      //     console.log("complete :)")
+      //   }
+      // };
+      // // url encode form data for sending as post data
+      // var encoded = Object.keys(data).map(function(k) {
+      //     return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      // }).join('&');
+      // xhr.send(encoded);
+      // console.log("xhr.send(encoded :)")
+    },
+    getFormData: function(form) {
+      var elements = form.elements;
+      var honeypot;
+
+      var fields = Object.keys(elements).filter(function(k) {
+        if (elements[k].name === "honeypot") {
+          honeypot = elements[k].value;
+          return false;
+        }
+        return true;
+      }).map(function(k) {
+        if(elements[k].name !== undefined) {
+          return elements[k].name;
+        // special case for Edge's html collection
+        }else if(elements[k].length > 0){
+          return elements[k].item(0).name;
+        }
+      }).filter(function(item, pos, self) {
+        return self.indexOf(item) == pos && item;
       });
 
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', this.url);
-      // xhr.withCredentials = true;
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log("complete :)")
+      var formData = {};
+      fields.forEach(function(name){
+        var element = elements[name];
+
+        // singular form elements just have one value
+        formData[name] = element.value;
+
+        // when our element has multiple items, get their values
+        if (element.length) {
+          var data = [];
+          for (var i = 0; i < element.length; i++) {
+            var item = element.item(i);
+            if (item.checked || item.selected) {
+              data.push(item.value);
+            }
+          }
+          formData[name] = data.join(', ');
         }
-      };
-      // url encode form data for sending as post data
-      var encoded = Object.keys(data).map(function(k) {
-          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-      }).join('&');
-      xhr.send(encoded);
-      console.log("xhr.send(encoded :)")
-    },
+      });
+
+      return {data: formData, honeypot: honeypot};
+    }
   },
   data () {
     return {
       show: true,
       url: 'https://script.google.com/macros/s/AKfycbwf9vHrFYI6KMJYyhOukPqpd1x1TUhTt41uwqtfmkxUwKmKypGNHmW8cKCdWM9KjAHL/exec',
+      honeypot: ''
     }
   },
 }
