@@ -222,7 +222,9 @@
         fieldset {
           border: none;
           display: grid;
-          grid-template-columns: 100px auto;
+          grid-template-rows: auto auto;
+          gap: 0.2rem;
+          padding: 0;
 
           &.honeypot-field {
             display: none;
