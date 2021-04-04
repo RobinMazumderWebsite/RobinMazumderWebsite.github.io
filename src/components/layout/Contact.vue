@@ -1,37 +1,42 @@
 <template lang="html">
   <section class="section contact contact-style b-loaded" id="contact">
     <div class="contact_contents">
-      <span>
-        <h4 class="contact_contents--title">lets work together:</h4>
-        schedule a time to meet
-      </span>
-      <span>
-        <h4 class="contact_contents--title">lets work together:</h4>
-        schedule a time to meet
-      </span>
-      <p>
-        email me at
-        <a
-          class="contact_contents--links"
-          href="mailto:robin@robinmazumder.com"
+      <h4 class="contact_contents--title">lets work together:</h4>
+      <p><a href="twitter.com/RobinMazumder">Tweet me</a> ↗</p>
+      <p><a href="https://calendly.com/robinmazumder">Meet me</a> ↗</p>
+      <p><span class="email">Email me</span> ↓</p>
+      <div class="contact_contents--form">
+        <p class="hidden-start" :class="showSuccess ? 'show' : 'hide'">
+          Thanks
+        </p>
+        
+        <p class="hidden-start" :class="showError ? 'show' : 'hide'">
+          Sorry there was an error, email me at <a href="mailto:robin@robinmazumder.com">robin@robinmazumder.com</a>.
+        </p>
+        
+        <p class="hidden-start" :class="showLoading ? 'show' : 'hide'">
+          Sending...
+        </p>
+
+        <form
+          class="gform pure-form pure-form-stacked hidden-start"
+          @submit.prevent="checkForm"
+          :class="!showSuccess && !showError && !showLoading ? 'show' : 'hide'"
         >
-          robin at robinmazumder dot com
-        </a>
-        .
-      </p>
-
-      <p v-if="!show">
-        Thanks
-      </p>
-
-      <form
-        class="gform pure-form pure-form-stacked"
-        @submit.prevent="checkForm"
-      >
-        <div class="form-elements" v-if="show">
           <fieldset class="pure-group">
-            <label for="name">aName: </label>
-            <input id="name" name="name" placeholder="ur name" />
+            <label for="name">Name: </label>
+            <input id="name" name="name" placeholder="First and last name" />
+          </fieldset>
+
+          <fieldset class="pure-group">
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="your.name@email.com"
+            />
           </fieldset>
 
           <fieldset class="pure-group">
@@ -40,18 +45,7 @@
               id="message"
               name="message"
               rows="10"
-              placeholder="Tell us what's on your mind..."
-            />
-          </fieldset>
-
-          <fieldset class="pure-group">
-            <label for="email"><em>Your</em> Email Address:</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder="your.name@email.com"
+              placeholder="How can we work together?"
             />
           </fieldset>
 
@@ -73,10 +67,10 @@
             class="button-success pure-button button-xlarge"
             type="submit"
           >
-            <i class="fa fa-paper-plane"></i>&nbsp;Sendt
+            Send
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </section>
 </template>
@@ -86,7 +80,7 @@
     name: 'contact',
     methods: {
       checkForm: function (e) {
-        this.show = false;
+        this.showLoading = true;
 
         var form = e.target;
         var formData = this.getFormData(form);
@@ -100,6 +94,11 @@
           body: formData.data
         }).then(() => {
           console.log("Form sent :)");
+          this.showLoading = false;
+          this.showSuccess = true;
+        }).catch(() => {
+          this.showLoading = false;
+          this.showError = true;
         })
       },
       getFormData: function(form) {
@@ -152,7 +151,9 @@
     },
     data () {
       return {
-        show: true,
+        showLoading: false,
+        showSuccess: false,
+        showError: false,
         url: 'https://script.google.com/macros/s/AKfycbwf9vHrFYI6KMJYyhOukPqpd1x1TUhTt41uwqtfmkxUwKmKypGNHmW8cKCdWM9KjAHL/exec',
         honeypot: ''
       }
@@ -179,10 +180,72 @@
       position: relative;
       margin: auto;
     }
-  }
-}
 
-.honeypot-field {
-  display: none;
+    .email {
+      text-decoration: underline;
+    }
+
+    &--form {
+      p {
+        text-align: center;
+      }
+      .hidden-start {
+        transition: opacity 2s ease-out, max-height 2s ease-out;
+        &:nth-of-type(2) {
+          transition-delay: 0.3s;
+        }
+        &:nth-of-type(3) {
+          transition-delay: 0.6s;
+        }
+        &:nth-of-type(4) {
+          transition-delay: 0.9s;
+        }
+        &:nth-of-type(5) {
+          transition-delay: 1.2s;
+        }
+        opacity: 0;
+        max-height: 0px;
+        overflow: hidden;
+        &.show {
+          opacity: 1;
+          max-height: 1000px;
+          display: block;
+        }
+      }
+
+      form {
+        display: flex !important;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 500px;
+        margin: auto;
+        fieldset {
+          border: none;
+          display: grid;
+          grid-template-columns: 100px auto;
+
+          &.honeypot-field {
+            display: none;
+          }
+
+          input, textarea {
+            border: none;
+            padding: 10px;
+          }
+        }
+
+        button {
+          border: none;
+          cursor: pointer;
+          background-color: var(--brand-colour);
+          color: var(--brand-contrastlight);
+          @media (prefers-color-scheme: dark) {
+            background-color: var(--brand-contrastlight);
+            color: var(--brand-contrastdark);
+          }
+        }
+      }
+    }
+  }
 }
 </style>
