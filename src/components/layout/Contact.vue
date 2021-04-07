@@ -86,7 +86,7 @@
         var formData = this.getFormData(form);
         if (formData.honeypot) return;
 
-        fetch("https://script.google.com/macros/s/AKfycbwf9vHrFYI6KMJYyhOukPqpd1x1TUhTt41uwqtfmkxUwKmKypGNHmW8cKCdWM9KjAHL/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbx5HebznWt2vdcIPS9F3PF96GJbvuyNIKY5C5WgUbGLQanUenm_h_nDUbcB39jP0jLs/exec", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded"
