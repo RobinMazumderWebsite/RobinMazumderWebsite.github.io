@@ -2,18 +2,24 @@
   <div ref="bgani" class="BackgroundAnimation">
     <img
       key="1"
+      aria-hidden="true"
+      alt="large transparent rectangle moving slowly in an unrecognizable pattern - symbolizing the human mind."
       ref="BackgroundAnimation_icon1"
       class="BackgroundAnimation_icon BackgroundAnimation_icon--1"
       src="../../assets/elements/Rectangle01.svg"
     />
     <img
       key="2"
+      aria-hidden="true"
+      alt="large transparent rectangle moving slowly in an unrecognizable pattern - symbolizing the human mind."
       ref="BackgroundAnimation_icon2"
       class="BackgroundAnimation_icon BackgroundAnimation_icon--2"
       src="../../assets/elements/Rectangle02.svg"
     />
     <img
       key="3"
+      aria-hidden="true"
+      alt="large transparent rectangle moving slowly in an unrecognizable pattern - symbolizing the human mind."
       ref="BackgroundAnimation_icon3"
       class="BackgroundAnimation_icon BackgroundAnimation_icon--3"
       src="../../assets/elements/Rectangle03.svg"
@@ -31,15 +37,18 @@
     mounted () {
       const container = this.$refs.bgani, w = container.clientWidth - 100, h = container.clientHeight;
       const icons = [
-        this.$refs.BackgroundAnimation_icon1, 
-        this.$refs.BackgroundAnimation_icon2, 
+        this.$refs.BackgroundAnimation_icon1,
+        this.$refs.BackgroundAnimation_icon2,
         this.$refs.BackgroundAnimation_icon3];
 
       for (var i = 0; i < this.total; i++) {
           var icon = icons[i];
           TweenLite.set(icon, { x: this.R(0, w/2), y: this.R(-h/2, h/2) }); // place icon
-          this.iconRotate(icon, TweenMax);
-          this.iconSway(icon, TweenMax);
+
+          if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            this.iconRotate(icon, TweenMax);
+            this.iconSway(icon, TweenMax);
+          }
       }
     },
     data () {
@@ -95,7 +104,7 @@
     background-repeat: no-repeat;
     opacity: 0.5;
     @media screen and (max-width: 600px) {
-      width: 70%
+      width: 70%;
     }
   }
 }
