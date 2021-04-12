@@ -11,6 +11,8 @@
         well-being, equity, and our planet.
       </p>
 
+      <p>I give keynote talks and interactive workshops on urbanism, public health, citizenship, mental health and more.</p>
+      
       <span v-if="!showText">
         <button class="intro_button" v-on:click="showText = !showText">
           read more
@@ -133,6 +135,9 @@ export default  {
     border: none;
     background-color: var(--brand-colour);
     color: var(--brand-contrastlight);
+    &:hover {
+      cursor: pointer;
+    }
     @media (prefers-color-scheme: dark) {
       background-color: var(--brand-contrastlight);
       color: var(--brand-contrastdark);
