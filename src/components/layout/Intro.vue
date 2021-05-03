@@ -30,10 +30,7 @@
         </h2>
         <p class="intro_text intro_text--para">
           Life is about relationships. Relationships with ourselves, others and
-          our world. I'm interested in how impactful the places we live are on
-          our lives. If we can build better cities for our people, we can
-          dramatically improve our mental and physical health, our friendships
-          and families, our communities, and of course, our relationships.
+          our world. I'm interested in how the places we live impact these connections, particularly how the design of our communities, from architecture to greenspace, can contribute to a sense of harmony. How does our social and physical environment influnce our sense of well-being?
         </p>
       </section>
 
