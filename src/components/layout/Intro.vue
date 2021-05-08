@@ -29,6 +29,11 @@
           well-being, equity, and our planet.
         </p>
 
+        <p>
+          I give keynote talks and interactive workshops on urbanism, public
+          health, citizenship, mental health and more.
+        </p>
+
         <span v-if="!showText">
           <button class="intro_button" v-on:click="showText = !showText">
             read more
@@ -46,11 +51,11 @@
           </h2>
           <p class="intro_text intro_text--para">
             Life is about relationships. Relationships with ourselves, others
-            and our world. I'm interested in how impactful the places we live
-            are on our lives. If we can build better cities for our people, we
-            can dramatically improve our mental and physical health, our
-            friendships and families, our communities, and of course, our
-            relationships.
+            and our world. I'm interested in how the places we live impact these
+            connections, particularly how the design of our communities, from
+            architecture to greenspace, can contribute to a sense of harmony.
+            How does our social and physical environment influnce our sense of
+            well-being?
           </p>
         </section>
 
@@ -189,6 +194,9 @@ export default  {
       border: none;
       background-color: var(--brand-colour);
       color: var(--brand-contrastlight);
+      &:hover {
+        cursor: pointer;
+      }
       @media (prefers-color-scheme: dark) {
         background-color: var(--brand-contrastlight);
         color: var(--brand-contrastdark);

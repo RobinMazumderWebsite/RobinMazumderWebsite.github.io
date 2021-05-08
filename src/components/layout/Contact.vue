@@ -1,21 +1,23 @@
 <template lang="html">
   <section class="section contact contact-style b-loaded" id="contact">
     <div class="contact_contents">
-      <h4 class="contact_contents--title">lets work together:</h4>
-      <p><a href="twitter.com/RobinMazumder">Tweet me</a> ↗</p>
-      <p><a href="https://calendly.com/robinmazumder">Meet me</a> ↗</p>
-      <p><span class="email">Email me</span> ↓</p>
+      <h4 class="contact_contents--title">lets work together</h4>
+      <p>Book time with me on <a href="https://calendly.com/robinmazumder">Calendly</a> ↗</p>
+      <p>Converse with me on <a href="https://twitter.com/RobinMazumder">Twitter</a> ↗</p>
+      <p>Or send me an email</p>
       <div class="contact_contents--form">
-        <p class="hidden-start" :class="showSuccess ? 'show' : 'hide'">
-          Thanks
-        </p>
-        
-        <p class="hidden-start" :class="showError ? 'show' : 'hide'">
-          Sorry there was an error, email me at <a href="mailto:robin@robinmazumder.com">robin@robinmazumder.com</a>.
-        </p>
-        
-        <p class="hidden-start" :class="showLoading ? 'show' : 'hide'">
-          Sending...
+        <p>
+          <span class="hidden-start" :class="showLoading ? 'show' : 'hide'">
+            Sending...
+          </span>
+
+          <span class="hidden-start" :class="showSuccess ? 'show' : 'hide'">
+            Thanks
+          </span>
+
+          <span class="hidden-start" :class="showError ? 'show' : 'hide'">
+            Sorry there was an error, email me at <a href="mailto:robin@robinmazumder.com">robin@robinmazumder.com</a>.
+          </span>
         </p>
 
         <form
@@ -171,6 +173,7 @@
     padding: 10vh 0;
     width: 100%;
     margin: auto;
+    text-align: center;
 
     &--title {
       font-weight: bold;
@@ -233,6 +236,7 @@
           input, textarea {
             border: none;
             padding: 10px;
+            font: var(--brand-text);
           }
         }
 
