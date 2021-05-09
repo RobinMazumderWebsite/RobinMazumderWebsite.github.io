@@ -194,6 +194,7 @@ export default  {
       border: none;
       background-color: var(--brand-colour);
       color: var(--brand-contrastlight);
+      font-size: 16px;
       &:hover {
         cursor: pointer;
       }
