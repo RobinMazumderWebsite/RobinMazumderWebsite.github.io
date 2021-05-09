@@ -190,7 +190,7 @@ export default  {
       padding: 0;
     }
 
-    &_button {
+    .intro_button {
       border: none;
       background-color: var(--brand-colour);
       color: var(--brand-contrastlight);
@@ -203,7 +203,7 @@ export default  {
       }
     }
 
-    &_text {
+    .intro_text {
       &--title {
         font: var(--bold-text);
         text-transform: uppercase;
