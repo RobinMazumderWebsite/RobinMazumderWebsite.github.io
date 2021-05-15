@@ -54,7 +54,7 @@
             and our world. I'm interested in how the places we live impact these
             connections, particularly how the design of our communities, from
             architecture to greenspace, can contribute to a sense of harmony.
-            How does our social and physical environment influnce our sense of
+            How does our social and physical environment influence our sense of
             well-being?
           </p>
         </section>
