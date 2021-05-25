@@ -13,6 +13,11 @@
         >
       </li>
       <li>
+        <a href="https://robinmazumderdotcom.wordpress.com/media/"
+          >Media</a
+        >
+      </li>
+      <li>
         <a href="https://robinmazumderdotcom.wordpress.com/contact/">Contact</a>
       </li>
     </ul>
