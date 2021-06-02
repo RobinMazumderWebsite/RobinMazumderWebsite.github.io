@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Intro />
+    <Speaking />
     <Animation />
     <Contact />
   </div>
@@ -8,6 +9,7 @@
 
 <script>
 import Intro from "./components/layout/Intro.vue";
+import Speaking from "./components/layout/Speaking.vue";
 import Animation from "./components/layout/Animation.vue";
 import Contact from "./components/layout/Contact.vue";
 
@@ -15,6 +17,7 @@ export default {
   name: "App",
   components: {
     Intro,
+    Speaking,
     Animation,
     Contact,
   },
@@ -58,7 +61,7 @@ body {
 .section {
   width: 70%;
   max-width: 800px;
-  margin: 25vh auto 15vh;
+  margin: 20vh auto 15vh;
 }
 
 // DARK MODE

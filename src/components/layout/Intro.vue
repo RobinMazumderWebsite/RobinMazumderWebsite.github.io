@@ -23,7 +23,7 @@
     </ul>
 
     <div class="content">
-      <FloatingImage />
+      <FloatingImage type="intro" />
 
       <div>
         <h1 class="intro_text intro_text--title">
@@ -151,6 +151,7 @@ export default  {
 <style scoped lang="scss">
 .intro {
   position: relative;
+  margin: 25vh auto 15vh;
 
   ul {
     display: flex;

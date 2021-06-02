@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
-    <img class="Image desktop" src="../../assets/pics/robin.jpg" alt="Me looking to the sky smiling, making my dreams for an equitable world reality." />
-    <img class="Image mobile" src="../../assets/pics/robin-mobile.png" alt="Me looking to the sky smiling, making my dreams for an equitable world reality." />
+    <img class="Image desktop" :src="require('@/assets/' + this.desktop)" alt="Me looking to the sky smiling, making my dreams for an equitable world reality." />
+    <img class="Image mobile" :src="require('@/assets/' + this.mobile)" alt="Me looking to the sky smiling, making my dreams for an equitable world reality." />
   </div>
 </template>
 
@@ -9,6 +9,17 @@
 
 export default  {
   name: 'FloatingImage',
+  props: ["type"],
+  data () { return {
+    desktop: "pics/robin.jpg",
+    mobile: "pics/robin-mobile.png",
+  } },
+  mounted () {
+    if (this.type === "speaking") {
+      this.desktop = "pics/Robin-Speaking.jpg";
+      this.mobile = "pics/Robin-Speaking.jpg";
+    }
+  }
 }
 </script>
 
