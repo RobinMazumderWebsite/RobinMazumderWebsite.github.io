@@ -2,6 +2,7 @@
   <div id="app">
     <Intro />
     <Speaking />
+    <Media />
     <Animation />
     <Contact />
   </div>
@@ -10,6 +11,7 @@
 <script>
 import Intro from "./components/layout/Intro.vue";
 import Speaking from "./components/layout/Speaking.vue";
+import Media from "./components/layout/Media.vue";
 import Animation from "./components/layout/Animation.vue";
 import Contact from "./components/layout/Contact.vue";
 
@@ -18,6 +20,7 @@ export default {
   components: {
     Intro,
     Speaking,
+    Media,
     Animation,
     Contact,
   },

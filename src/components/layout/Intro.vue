@@ -13,7 +13,7 @@
         >
       </li>
       <li>
-        <a href="https://robinmazumderdotcom.wordpress.com/media/"
+        <a href="#media"
           >Media</a
         >
       </li>
