@@ -1,6 +1,7 @@
 <template lang="html">
   <section class="speaking section" id="speaking">
     <div class="content">
+      <FloatingImage type="speaking" float="right" class="mobile" />
       <div>
         <h1 class="speaking_text speaking_text--title">
           Speaking
@@ -33,7 +34,7 @@
           </p>
         </section>
       </div>
-      <FloatingImage type="speaking" />
+      <FloatingImage type="speaking" float="right" class="desktop" />
     </div>
   </section>
 </template>
@@ -114,9 +115,20 @@ export default  {
     grid-template-columns: auto 30%;
     gap: 5%;
 
+    .mobile {
+      display: none;
+    }
+
     @media screen and (max-width: 600px) {
       display: block;
       padding: 0;
+
+      .mobile {
+        display: block;
+      }
+      .desktop {
+        display: none;
+      }
     }
 
     .date_buttons {
