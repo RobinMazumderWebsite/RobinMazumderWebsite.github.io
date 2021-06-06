@@ -8,7 +8,7 @@
         <a href="https://robinmazumderdotcom.wordpress.com/blog/">Blog</a>
       </li>
       <li>
-        <a href="https://robinmazumderdotcom.wordpress.com/speaking/"
+        <a href="#speaking"
           >Speaking</a
         >
       </li>
@@ -18,7 +18,7 @@
         >
       </li>
       <li>
-        <a href="https://robinmazumderdotcom.wordpress.com/contact/">Contact</a>
+        <a href="#contact">Contact</a>
       </li>
     </ul>
 

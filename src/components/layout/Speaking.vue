@@ -11,7 +11,7 @@
         </p>
 
         <p class="speaking_text speaking_text--para">
-          View my speaking history here, and get in touch if you'd like me to speak at your event.
+          View my speaking history by date, and get in touch if you'd like me to speak at your event.
         </p>
 
         <p class="date_buttons">
@@ -58,11 +58,10 @@ export default  {
       this.speakingDataByYear = this.availableDates.map((year) => { 
         return { "year": year, "data": json.speaking.filter(d => d.year === year) } 
       })
-      this.showing = this.availableDates[0];
     });  
   },
   data () { return {
-    showing: 2020,
+    showing: 0,
     speakingDataByYear: [],
     availableDates: [],
   } },
@@ -133,7 +132,7 @@ export default  {
 
     .date_buttons {
       display: grid;
-      grid-template-columns: repeat( auto-fill, 45px );
+      grid-template-columns: repeat(auto-fill, minmax(45px, max-content));
       gap: 5px;
       margin-top: 2rem;
     }
