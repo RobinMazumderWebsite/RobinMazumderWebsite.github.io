@@ -1,16 +1,6 @@
 <template lang="html">
   <section class="section contact contact-style b-loaded" id="contact">
     <div class="contact_contents">
-      <h4 class="contact_contents--title">lets work together</h4>
-      <p>
-        Book time with me on
-        <a href="https://calendly.com/robinmazumder">Calendly</a> ↗
-      </p>
-      <p>
-        Converse with me on
-        <a href="https://twitter.com/RobinMazumder">Twitter</a> ↗
-      </p>
-      <p>Or send me an email</p>
       <div class="contact_contents--form">
         <p>
           <span class="hidden-start" :class="showLoading ? 'show' : 'hide'">
@@ -178,7 +168,6 @@ export default  {
   margin-top: 0;
 
   &_contents {
-    padding: 10vh 0;
     width: 100%;
     margin: auto;
     text-align: center;

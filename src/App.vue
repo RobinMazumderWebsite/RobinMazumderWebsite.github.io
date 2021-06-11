@@ -1,21 +1,38 @@
 <template>
   <div id="app">
-    <Intro />
-    <Animation />
-    <Contact />
+    <div class="bg" />
+    <div class="content">
+      <img src="./assets/pics/robinfeet.jpeg" />
+      <h1 class="intro_text intro_text--title">
+        Robin Mazumder
+      </h1>
+      <small class="intro_text intro_text--smallcaps">Work in progress</small>
+      <p class="intro_text intro_text--para intro_text--desc">
+        Neuroscientist interested in helping design cities that support
+        well-being, equity, and our planet.
+      </p>
+      <p>
+        I give keynote talks and interactive workshops on urbanism, public
+        health, citizenship, mental health and more.
+      </p>
+      <p>
+        This website is a work in progress, in the meantime,     
+        book time with me on
+        <a target="_blank" href="https://calendly.com/robinmazumder">Calendly</a> ↗,
+        <a target="_blank" href="https://twitter.com/RobinMazumder">tweet me</a> ↗, view my 
+        <a target="_blank" href="https://robinmazumderdotcom.wordpress.com">old website</a> ↗, or send me an email below:
+      </p>
+      <Contact />
+    </div>
   </div>
 </template>
 
 <script>
-import Intro from "./components/layout/Intro.vue";
-import Animation from "./components/layout/Animation.vue";
 import Contact from "./components/layout/Contact.vue";
 
 export default {
   name: "App",
   components: {
-    Intro,
-    Animation,
     Contact,
   },
 };
@@ -23,6 +40,66 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&family=Archivo:wght@600&display=swap');
+
+.content {
+  width: 90%;
+  max-width: 450px;
+  margin: 0 auto 0;
+  padding-top: 25vh;
+
+  img {
+    width: 100%;
+  }
+
+  color: white;
+  text-shadow: 1px 1px black;
+
+  .intro_text {
+    &--title {
+      font: var(--bold-text);
+      text-transform: uppercase;
+      z-index: 0;
+      margin-bottom: 0.5rem;
+      @media screen and (max-width: 600px) {
+        font-size: 20px;
+      }
+    }
+
+    &--smallcaps {
+      text-transform: uppercase;
+      font: var(--button-text);
+    }
+
+    &--subtitle {
+      font-size: 18px;
+      text-transform: uppercase;
+      z-index: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    &--desc {
+      margin-bottom: 1.5rem;
+    }
+
+    &--para {
+      line-height: 150%;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  filter: blur(15px);
+  background: url("./assets/pics/robinfeet.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
 
 :root {
   --brand-colour: #384722;
@@ -42,23 +119,19 @@ export default {
   --icon-text: normal 20px/1.3 "Roboto";
 }
 
-body {
-  background-color: var(--brand-backgroundcolour);
-}
-
 // FONTS
 #app, a {
   font: var(--brand-text);
   color: var(--brand-textcolour);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position:relative;
 }
 
 // SPACING
 .section {
-  width: 70%;
-  max-width: 800px;
-  margin: 25vh auto 15vh;
+  margin: 25vh auto 0;
+  padding-bottom: 15vh;
 }
 
 // DARK MODE
