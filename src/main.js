@@ -15,6 +15,8 @@ Vue.config.productionTip = false;
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 const router = new VueRouter({
+  mode: 'history',
+  hash: false,
   routes: [
     {
       path: "/", 
@@ -25,7 +27,7 @@ const router = new VueRouter({
         const url = window.location.href;
         let newUrl = "";
         if (url.includes("localhost")) {
-          newUrl = url.replace("localhost:8080/#", "robinmazumderdotcom.wordpress.com");
+          newUrl = url.replace("localhost:8080", "robinmazumderdotcom.wordpress.com");
         } else if (url.includes("robinmazumder.com")) {
           newUrl = url.replace("robinmazumder.com", "robinmazumderdotcom.wordpress.com");
         }

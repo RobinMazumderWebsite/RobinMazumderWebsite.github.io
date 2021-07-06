@@ -15,12 +15,17 @@
         I give keynote talks and interactive workshops on urbanism, public
         health, citizenship, mental health and more.
       </p>
+      <button
+        class="button-success pure-button button-xlarge"
+        type="submit"
+      >
+        View old website
+      </button>
       <p>
         This website is a work in progress, in the meantime,     
         book time with me on
         <a target="_blank" href="https://calendly.com/robinmazumder">Calendly</a> ↗,
-        <a target="_blank" href="https://twitter.com/RobinMazumder">tweet me</a> ↗, view my 
-        <a target="_blank" href="https://robinmazumderdotcom.wordpress.com">old website</a> ↗, or send me an email below:
+        <a target="_blank" href="https://twitter.com/RobinMazumder">tweet me</a> ↗, or send me an email below:
       </p>
       <Contact />
     </div>
@@ -84,6 +89,19 @@ export default {
     &--para {
       line-height: 150%;
       margin-top: 0.5rem;
+    }
+  }
+
+  button {
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--brand-colour);
+    color: var(--brand-contrastlight);
+    font-size: 16px;
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--brand-contrastlight);
+      color: var(--brand-contrastdark);
     }
   }
 }
