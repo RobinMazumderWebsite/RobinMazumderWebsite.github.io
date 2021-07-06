@@ -12,6 +12,30 @@ Vue.use(VueParallaxJs);
 
 Vue.config.productionTip = false;
 
+import VueRouter from 'vue-router'
+Vue.use(VueRouter);
+const router = new VueRouter({
+  routes: [
+    {
+      path: "/", 
+      component: App,
+    }, {
+      path: "/:pathMatch(.*)*", 
+      redirect: () => {
+        const url = window.location.href;
+        let newUrl = "";
+        if (url.includes("localhost")) {
+          newUrl = url.replace("localhost:8080/#", "robinmazumderdotcom.wordpress.com");
+        } else if (url.includes("robinmazumder.com")) {
+          newUrl = url.replace("robinmazumder.com", "robinmazumderdotcom.wordpress.com");
+        }
+        window.location.href = newUrl;
+      }
+    }
+  ]
+})
+
 new Vue({
+  router,
   render: (h) => h(App),
 }).$mount("#app");
