@@ -15,12 +15,12 @@
         I give keynote talks and interactive workshops on urbanism, public
         health, citizenship, mental health and more.
       </p>
-      <button
-        class="button-success pure-button button-xlarge"
-        type="submit"
+      <a
+        class="button"
+        href="https://robinmazumderdotcom.wordpress.com"
       >
         View old website
-      </button>
+      </a>
       <p>
         This website is a work in progress, in the meantime,     
         book time with me on
@@ -92,13 +92,15 @@ export default {
     }
   }
 
-  button {
+  .button {
     border: none;
     width: 100%;
     cursor: pointer;
     background-color: var(--brand-colour);
     color: var(--brand-contrastlight);
     font-size: 16px;
+    display: flex;
+    justify-content: center;
     @media (prefers-color-scheme: dark) {
       background-color: var(--brand-contrastlight);
       color: var(--brand-contrastdark);
