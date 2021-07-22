@@ -86,7 +86,7 @@ export default  {
       var formData = this.getFormData(form);
       if (formData.honeypot) return;
 
-      fetch("https://script.google.com/macros/s/AKfycbxXg8WOERQfI91owLJMA5qPB0gxsFRHRE97sVMhIkHEP3oDsjt-FTcdmEMxdPKXaONjyw/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbzZ6cm-AlRllkBykajSX2hMgsl1yn5X9jWwQJUGk4xD_I1vGmJleDxfSHjIbGvPkILr/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -154,7 +154,7 @@ export default  {
       showLoading: false,
       showSuccess: false,
       showError: false,
-      url: 'https://script.google.com/macros/s/AKfycbxXg8WOERQfI91owLJMA5qPB0gxsFRHRE97sVMhIkHEP3oDsjt-FTcdmEMxdPKXaONjyw/exec',
+      url: 'https://script.google.com/macros/s/AKfycbzZ6cm-AlRllkBykajSX2hMgsl1yn5X9jWwQJUGk4xD_I1vGmJleDxfSHjIbGvPkILr/exec',
       honeypot: ''
     }
   },
